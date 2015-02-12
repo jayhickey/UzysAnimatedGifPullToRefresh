@@ -138,9 +138,6 @@
                             options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionCurveEaseOut|UIViewAnimationOptionBeginFromCurrentState
                          animations:^{
                              self.scrollView.contentInset = contentInset;
-                             if(self.isVariableSize) {
-                                 self.scrollView.contentOffset = CGPointMake(self.scrollView.contentOffset.x, -1*contentInset.top);                                 
-                             }
                          }
                          completion:^(BOOL finished) {
                              if(handler)
@@ -150,7 +147,6 @@
     else
     {
         self.scrollView.contentInset = contentInset;
-        self.scrollView.contentOffset = CGPointMake(self.scrollView.contentOffset.x, -1*contentInset.top);
 
         if(handler)
             handler();
